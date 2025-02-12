@@ -1,0 +1,16 @@
+[Unit]
+Description=IP4P Redirect Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+Restart=on-failure
+RestartSec=5s
+WorkingDirectory=/opt/ip4p_301/
+ExecStart=/opt/ip4p_301/ip4p
+LimitNOFILE=1048576
+
+[Install]
+WantedBy=multi-user.target
